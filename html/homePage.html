@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script>
+       document.addEventListener("DOMContentLoaded", ()=>{
+            var zahtjev = new Request('/skiniFilm')
+            var podnesi = document.getElementById('podnesi')
+            var slika = document.querySelector('video')
+            let url = document.getElementById('unos')
+            podnesi.addEventListener('click',()=>{
+                console.log("Donar dan")
+                console.log(url.value)
+                slika.src = '/video?url=' + url.value
+            }) 
+       })
+        
+    </script>
+</head>
+<body>
+    <div>
+        <form action="GET">
+            <label for="unos">Url Filma: </label>
+            <input type="text" name="urlFilma" id="unos">
+        </form>
+        
+        <input type="button" value="Podnesi" id="podnesi">
+    </div>
+    <video src="" controls width="auto" height="auto">
+        
+    </video>
+    <div>
+        <a href="/downloadMovie">testiranje</a>
+    </div>
+</body>
+</html>
